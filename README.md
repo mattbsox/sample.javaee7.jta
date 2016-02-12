@@ -1,10 +1,10 @@
-####JTA sample for Java EE7
+###JTA sample for Java EE7
 
 This application demonstrates the use of @Transactional annotations to declaratively control transaction boundaries, along with using the @TransactionScoped annotation to scope a bean lifecycle to a transaction.
 
-####WAS Liberty
+###WAS Liberty
 
-###Maven
+####Maven
 
 The sample can be built using [Apache Maven](http://maven.apache.org/). In the directory where you cloned the repository issue the following command to build the source.
 
@@ -53,9 +53,9 @@ To import the source code into Eclipse/WDT:
 5.	Run the sample by hitting the following URL using your servers hostname and port
 [http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
 
-####WAS Classic
+###WAS Classic
 
-###Configure required resources
+####Configure required resources
 1.	Verify that a Derby JDBC Provider instance exists. In the administrative console, click Resources > JDBC > JDBC providers.
 If that provider does not exist, create one with a Connection pool datasource implementation type, and point to the Derby.jar file; for example: ${WAS_INSTALL_ROOT}/derby/lib
 
@@ -75,7 +75,7 @@ Value: BATCH
 com.ibm.ws.batch.JNDI_NAME
 Value: DefaultDatasource
 
-####Install using the Administrative Console
+###Install using the Administrative Console
 1.	In your preferred browser, go to the Integrated Solutions Console; for example: [http://hostname:9060/ibm/console/](http://hostname:9060/ibm/console/)
 2.	Log in with your user name and password.
 3.	Select Applications > New Application.
