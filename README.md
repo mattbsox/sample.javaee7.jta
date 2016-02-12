@@ -57,23 +57,21 @@ To import the source code into Eclipse/WDT:
 
 ####Configure required resources
 1.	Verify that a Derby JDBC Provider instance exists. In the administrative console, click Resources > JDBC > JDBC providers.
-If that provider does not exist, create one with a Connection pool datasource implementation type, and point to the Derby.jar file; for example: ${WAS_INSTALL_ROOT}/derby/lib
+
+- If that provider does not exist, create one with a Connection pool datasource implementation type, and point to the Derby.jar file; for example: ${WAS_INSTALL_ROOT}/derby/lib
 
 2.	Verify that a Default datasource instance is configured. Click Resources > JDBC > Data sources.
-If that datasource does not exist, create one with the name "Default datasource" and the JNDI name "DefaultDatasource" that points to the Derby JDBC Provider and "${WAS_INSTALL_ROOT}/derby/DefaultDB" database.
-To create the actual database, remotely connect to your machine hosting WebSphere Classic using SSH.
-Navigate to ${WAS_INSTALL_ROOT}/derby/bin/embedded/
-Run "./ij.sh". When you see the prompt "ij>", enter the following command:
-$ connect 'jdbc:derby:DefaultDB;create=true';
-The default Derby database is created in the following directory: ${WAS_INSTALL_ROOT}/derby/DefaultDB
 
-3.	Add JVM arguments to the server running the batch sample.
-Click Servers > Server Types > WebSphere application servers > server_name > Java and Process Management > Process definition > Java Virtual Machine > Custom properties.
-Add the following custom properties:
-com.ibm.ws.batch.DB_SCHEMA
-Value: BATCH
-com.ibm.ws.batch.JNDI_NAME
-Value: DefaultDatasource
+- If that datasource does not exist, create one with the name "Default datasource" and the JNDI name "DefaultDatasource" that points to the Derby JDBC Provider and "${WAS_INSTALL_ROOT}/derby/DefaultDB" database.
+
+- To create the actual database, remotely connect to your machine hosting WebSphere Classic using SSH.
+
+    - Navigate to ${WAS_INSTALL_ROOT}/derby/bin/embedded/
+    
+    - Run "./ij.sh". When you see the prompt "ij>", enter the following command:
+        $ connect 'jdbc:derby:DefaultDB;create=true';
+        
+    - The default Derby database is created in the following directory: ${WAS_INSTALL_ROOT}/derby/DefaultDB
 
 ###Install using the Administrative Console
 1.	In your preferred browser, go to the Integrated Solutions Console; for example: [http://hostname:9060/ibm/console/](http://hostname:9060/ibm/console/)
