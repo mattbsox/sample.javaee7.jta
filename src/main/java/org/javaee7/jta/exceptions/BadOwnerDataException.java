@@ -15,7 +15,7 @@
  * MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS OR MODIFICATIONS TO THE SAMPLE
  * SOURCE CODE.
  * 
- * (C) Copyright IBM Corp. 2015.
+ * (C) Copyright IBM Corp. 2016.
  * 
  * All Rights Reserved. Licensed Materials - Property of IBM.  
  */
