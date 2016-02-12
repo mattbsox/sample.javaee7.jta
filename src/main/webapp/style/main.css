@@ -1,0 +1,103 @@
+.frm1 {
+	padding: 15px;
+	background-color: #9666af;
+	margin-bottom: 5px;
+}
+
+.frm2 {
+	font-family: Verdana;
+	color: #440055;
+	margin-top: 15px;
+	margin-left: 10px;
+	font-size: 12px;
+	max-width: 850px;
+}
+
+.big {
+	font-size: 26px;
+	color: white;
+}
+
+.frm {
+	margin-top: 20px;
+	padding: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #ffffff;
+	z-index: -2;
+	margin-bottom: 40px;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.widgetcontainer {
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 15px
+}
+
+.trancontainer {
+	margin: 10px;
+	padding: 10px;
+	font-size: small;
+	border-style: dotted;
+	border-width: 1px;
+}
+
+.selectlabel {
+	display: block;
+}
+
+th, td {
+	border: 1px solid black;
+}
+
+.tabledata {
+	border-collapse: collapse;
+	padding: 15px;
+	display: inline-table;
+	min-width: 300px;
+}
+
+.tabledata td {
+	width: 50%;
+}
+
+.tabledata th {
+	width: 50%;
+}
+
+.resultselement {
+	padding: 15px;
+	display: inline-table;
+	max-width: 800px;
+}
+
+#activitylogentries {
+	height: 300px;
+	overflow: auto;
+}
+
+#activitylogentries p {
+	padding-bottom: 5px;
+	border-bottom: 1px dashed black;
+	width: 100%;
+	font-size: 80%;
+}
+
+#buttons {
+	margin-left: 10px;
+}
+
+button, select {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 300px;
+	margin-top: 5px;
+}
+
+input {
+	padding: 5px;
+}

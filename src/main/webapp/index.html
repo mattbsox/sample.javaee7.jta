@@ -1,0 +1,149 @@
+<!-- 
+ /*
+ * COPYRIGHT LICENSE: This information contains sample code provided in source
+ * code form. You may copy, modify, and distribute these sample programs in any 
+ * form without payment to IBM for the purposes of developing, using, marketing 
+ * or distributing application programs conforming to the application programming 
+ * interface for the operating platform for which the sample code is written. 
+ * 
+ * Notwithstanding anything to the contrary, IBM PROVIDES THE SAMPLE SOURCE CODE 
+ * ON AN "AS IS" BASIS AND IBM DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, 
+ * BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, 
+ * SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND ANY WARRANTY OR 
+ * CONDITION OF NON-INFRINGEMENT. IBM SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR
+ * OPERATION OF THE SAMPLE SOURCE CODE. IBM HAS NO OBLIGATION TO PROVIDE
+ * MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS OR MODIFICATIONS TO THE SAMPLE
+ * SOURCE CODE.
+ * 
+ * (C) Copyright IBM Corp. 2015.
+ * 
+ * All Rights Reserved. Licensed Materials - Property of IBM.  
+ */
+ 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JTA 1.2 WAS Classic Sample</title>
+<link rel="stylesheet" type="text/css" href="style/main.css"></link>
+<link rel="icon" href="data:;base64,iVBORw0KGgo="></link>
+<script src="js/main.js"></script>
+</head>
+<body onLoad="getData()">
+	<div class="frm1">
+		<div class="big">WAS Java EE 7 Sample - @Transactional and
+			@TransactionScoped</div>
+	</div>
+	<div class="frm2">
+		<div class="small">This application has been tested with Firefox
+			and Chrome.</div>
+
+	</div>
+
+	<div class="frm2" class="small">
+		<p>This application gives a simple example of the functionality
+			available in the JTA 1.2 features @Transactional and
+			@TransactionScoped. When the 'Create' button is pressed, a call is
+			made through to a servlet, which makes a call into an Owner bean to
+			create an Owner in the database. That bean then makes a call into a
+			Pet bean to create a Pet belonging to the Owner.</p>
+		<p>Methods on the Owner and Pet beans are annotated with
+			@Transactional. This allows declarative control over transaction
+			boundaries, and control over what kinds of error conditions to roll
+			back on.</p>
+		<p>Using this test application, you can experiment with different
+			settings for @Transactional. For example, the default settings will
+			cause an Owner to be created, but not their Pet: An exception will be
+			raised in the Pet bean which will roll back its transaction, but not
+			that of the Owner.</p>
+		<p>This demo showcases the use of @TransactionScoped by providing
+			a logger bean that records all the activity, using a random ID for
+			each transaction. This provides insight into what settings cause new
+			transactions to be created.</p>
+	</div>
+
+	<div class="trancontainer">
+		<form id="trandata">
+			<h3>Owner</h3>
+			<div class="widgetcontainer">
+				<label for="ownername" class="selectlabel">Name:</label> <input
+					name="ownername" id="ownername" value="Jane">
+			</div>
+			<div class="widgetcontainer">
+				<label for="tranannowner" class="selectlabel">Select an
+					@Transactional annotation:</label> <select id="tranannowner" name="tranannowner">
+					<option value="reqd" selected="selected">REQUIRED</option>
+					<option value="reqn">REQUIRES_NEW</option>
+				</select>
+			</div>
+
+			<div class="widgetcontainer">
+				<label for="excannowner" class="selectlabel">Select an
+					exception to throw:</label> <select id="excannowner" name="excannowner">
+					<option value="non">None</option>
+					<option value="exc">(Checked) BadOwnerDataException</option>
+					<option value="rte">(Runtime) BadOwnerDataRuntimeException</option>
+				</select>
+			</div>
+			<div class="widgetcontainer">
+				<label><input type="checkbox" id="rbrteowner" name="rbrteowner"
+					value="rbrte">Rollback on RuntimeException</label>
+			</div>
+
+			<div class="trancontainer">
+				<h3>Pet</h3>
+				<div class="widgetcontainer">
+					<label for="petname" class="selectlabel">Name:</label> <input
+						id="petname" name="petname" value="Pepper">
+				</div>
+				<div class="widgetcontainer">
+					<label for="tranannpet" class="selectlabel">Select an
+						@Transactional annotation:</label> <select id="tranannpet" name="tranannpet">
+						<option value="reqd">REQUIRED</option>
+						<option value="reqn" selected="selected">REQUIRES_NEW</option>
+					</select>
+				</div>
+
+				<div class="widgetcontainer">
+					<label for="excannpet" class="selectlabel">Select an
+						exception to throw:</label> <select id="excannpet" name="excannpet">
+						<option value="non">None</option>
+						<option value="exc">(Checked) BadPetDataException</option>
+						<option value="rte" selected="selected">(Runtime)
+							BadPetDataRuntimeException</option>
+					</select>
+				</div>
+				<div class="widgetcontainer">
+					<label><input type="checkbox" id="rbrtepet" name="rbrtepet" value="rbrte"
+						checked>Rollback on RuntimeException</label>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div id="buttons">
+		<button type="button" onclick="submitOwner()">Create</button>
+		<button type="button" onclick="clearData()">Clear data</button>
+	</div>
+	<div id="results">
+		<div class="resultselement">
+			<h4>Owners and Pets</h4>
+			<table id="tabledata" class="tabledata">
+				<thead>
+					<tr>
+						<th>Owner</th>
+						<th>Pet</th>
+					</tr>
+				</thead>
+				<tbody id="tabledatabody"></tbody>
+			</table>
+		</div>
+		<div class="resultselement">
+			<h4>Activity Log</h4>
+			<div id="activitylogentries"></div>
+		</div>
+	</div>
+</body>
+</html>
