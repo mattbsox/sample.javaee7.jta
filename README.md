@@ -61,11 +61,10 @@ To import the source code into Eclipse/WDT:
 
   - If that provider does not exist, create one with a Connection pool datasource implementation type, and point to the Derby.jar file; for example: ${WAS_INSTALL_ROOT}/derby/lib
 
-2.	Verify that a Default datasource instance is configured. Click Resources > JDBC > Data sources.
+2. Verify that a Default datasource instance is configured. Click Resources > JDBC > Data sources.
 	
   - If that datasource does not exist, create one with the name "Default datasource" and the JNDI name "DefaultDatasource" that points to the Derby JDBC Provider and "${WAS_INSTALL_ROOT}/derby/DefaultDB" database.
-
-- To create the actual database, remotely connect to your machine hosting WebSphere Classic using SSH.
+  - To create the actual database, remotely connect to your machine hosting WebSphere Classic using SSH.
 
     - Navigate to ${WAS_INSTALL_ROOT}/derby/bin/embedded/
     
