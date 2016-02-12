@@ -6,7 +6,7 @@ This application demonstrates the use of @Transactional annotations to declarati
 
 ###Maven
 
-The sample can be built using Apache Maven. In the directory where you cloned the repository issue the following command to build the source.
+The sample can be built using [Apache Maven](http://maven.apache.org/). In the directory where you cloned the repository issue the following command to build the source.
 
 $ mvn install
 
@@ -21,7 +21,7 @@ WDT also provides:
 - content-assist for server configuration (a nice to have: server configuration is minimal, but the tools can help you find what you need and identify finger-checks, etc.)
 - automatic incremental publish of applications so that you can write and test your changes locally without having to go through a build/publish cycle or restart the server (which is not that big a deal given the server restarts lickety-split, but less is more!).
 
-Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is explained on wasdev.net.
+Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is explained on [wasdev.net](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/).
 
 To import the source code into Eclipse/WDT:
 1.	In the Enterprise Explorer view, right click and select Import -> Existing Maven Projects
@@ -51,7 +51,7 @@ To import the source code into Eclipse/WDT:
 3.  Install this sample app to your server by copying sample.javaee7.jta.war that was made from running mvn install
 4.	Start the server.
 5.	Run the sample by hitting the following URL using your servers hostname and port
-http://hostname:port/sample.javaee7.jta/
+[http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
 
 ####WAS Classic
 
@@ -76,7 +76,7 @@ com.ibm.ws.batch.JNDI_NAME
 Value: DefaultDatasource
 
 ####Install using the Administrative Console
-1.	In your preferred browser, go to the Integrated Solutions Console; for example: http://hostname:9060/ibm/console/
+1.	In your preferred browser, go to the Integrated Solutions Console; for example: [http://hostname:9060/ibm/console/](http://hostname:9060/ibm/console/)
 2.	Log in with your user name and password.
 3.	Select Applications > New Application.
 4.	Select the New Enterprise Application link.
