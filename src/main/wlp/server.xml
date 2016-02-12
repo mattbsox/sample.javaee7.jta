@@ -20,6 +20,6 @@
 <file name="${shared.resource.dir}/derby/derby.jar"/>
 </library>
 
-<applicationMonitor updateTrigger="mbean"/>
+    <application name="sample.javaee7.servlet.jta" context-root="/sample.javaee7.jta" location="${appLocation}" type="war"/>
 
 </server>

@@ -127,7 +127,7 @@
                                     <outputDirectory>${project.build.directory}/shared/resources/derby</outputDirectory>
                                     <destFileName>derby.jar</destFileName>
                                 </artifactItem>
-                
+                		
                             </artifactItems>
                         </configuration>
                     </execution>
