@@ -37,22 +37,22 @@ To import the source code into Eclipse/WDT:
   <feature>jdbc-4.1</feature>
   <feature>jndi-1.0</feature>
   <feature>cdi-1.2</feature>
-    ```
+  ```
 
 2.	Add following derby resources to your server.xml:
     
-  ```
+```
   <library id="DerbyLib">
         <fileset dir="<DERBY_LIB_DIR>" id="DerbyFileset" includes="derbyclient.jar"/>
   </library>
-    ```
+```
     
-    ```
+```
   <dataSource id="DefaultDataSource" jndiName="jdbc/derbyClient">
         <jdbcDriver libraryRef="DerbyLib"/>
         <properties.derby.client user="sample" password="sample" createDatabase="create" databaseName="<DB_DIR_LOCATION>" portNumber="<DB_PORT>" serverName="localhost"/>
   </dataSource>
-    ```
+```
 
 3.  Install this sample app to your server by copying sample.javaee7.jta.war that was made from running mvn install
 4.	Start the server.
