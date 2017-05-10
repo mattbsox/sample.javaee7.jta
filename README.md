@@ -1,10 +1,10 @@
-###JTA sample for Java EE7
+### JTA sample for Java EE7
 
 This application demonstrates the use of @Transactional annotations to declaratively control transaction boundaries, along with using the @TransactionScoped annotation to scope a bean lifecycle to a transaction.
 
-###WAS Liberty
+### WAS Liberty
 
-####Maven
+#### Maven
 
 The sample can be built using [Apache Maven](http://maven.apache.org/). In the directory where you cloned the repository issue the following command to build the source.
 
@@ -14,7 +14,7 @@ Then, in the jta-webapp directory issue the following command to run it on a Lib
 
 $ mvn liberty:run-server
 
-####WebSphere Development Tools (WDT)
+#### WebSphere Development Tools (WDT)
 
 The WebSphere Development Tools (WDT) for Eclipse can be used to control the server (start/stop/dump/etc.), it also supports incremental publishing with minimal restarts, working with a debugger to step through your applications, etc.
 WDT also provides:
@@ -28,7 +28,7 @@ To import the source code into Eclipse/WDT:
 2.	Browse... to the top level directory titled sample.javaee7.jta
 3.	Verfiy all three boxes are checked and select Finish
 
-###Manual Deployment
+### Manual Deployment
 1.	Add following features to your server.xml 
 
   ```
@@ -59,9 +59,9 @@ To import the source code into Eclipse/WDT:
 5.	Run the sample by hitting the following URL using your servers hostname and port
 [http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
 
-###WAS Classic
+### WAS Classic
 
-####Configure required resources
+#### Configure required resources
 
 1. Verify that a Derby JDBC Provider instance exists. In the administrative console, click Resources > JDBC > JDBC providers.
 
@@ -79,7 +79,7 @@ To import the source code into Eclipse/WDT:
         
     - The default Derby database is created in the following directory: ${WAS_INSTALL_ROOT}/derby/DefaultDB
 
-###Install using the Administrative Console
+### Install using the Administrative Console
 1.	In your preferred browser, go to the Integrated Solutions Console; for example: [http://hostname:9060/ibm/console/](http://hostname:9060/ibm/console/)
 2.	Log in with your user name and password.
 3.	Select Applications > New Application.
