@@ -58,12 +58,6 @@
             <version>1.2</version> 
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -89,7 +83,7 @@
                     <configFile>src/main/wlp/server.xml</configFile>
                     <installAppPackages>project</installAppPackages>
                     <looseApplication>true</looseApplication>
-                    <type>zip</type>
+                    <stripVersion>true</stripVersion>
                     <bootstrapProperties>
                         <appLocation>${project.artifactId}.war</appLocation>
                     </bootstrapProperties>
@@ -142,7 +136,7 @@
                                     <groupId>org.apache.derby</groupId>
                                     <artifactId>derby</artifactId>
                                     <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources/derby</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resource/derby</outputDirectory>
                                     <destFileName>derby.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>

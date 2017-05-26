@@ -1,24 +1,24 @@
 <server description="Liberty JTA Sample">
 
-<featureManager>
-    <feature>localConnector-1.0</feature>
-    <feature>servlet-3.1</feature>
-    <feature>jsonp-1.0</feature>
-    <feature>jdbc-4.1</feature>
-    <feature>jndi-1.0</feature>
-    <feature>cdi-1.2</feature>
-</featureManager>
+    <featureManager>
+        <feature>localConnector-1.0</feature>
+        <feature>servlet-3.1</feature>
+        <feature>jsonp-1.0</feature>
+        <feature>jdbc-4.1</feature>
+        <feature>jndi-1.0</feature>
+        <feature>cdi-1.2</feature>
+    </featureManager>
 
-<httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+	<httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
 
-<dataSource id="DefaultDataSource" jndiName="jtaDB">
-    <jdbcDriver libraryRef="DerbyLib"/>
-    <properties.derby.embedded createDatabase="create" databaseName="${shared.resource.dir}/derby/JTASAMPLE"/>
-</dataSource>
+	<library id="DerbyLib">
+        <file name="${wlp.user.dir}/shared/resource/derby/derby.jar"/>
+    </library>
 
-<library id="DerbyLib">
-    <fileset dir="${shared.resource.dir}/derby/" includes="derby.jar"/>
-</library>
+    <dataSource id="DefaultDataSource" jndiName="jtaDB">
+        <jdbcDriver libraryRef="DerbyLib"/>
+        <properties.derby.embedded createDatabase="create" databaseName="${wlp.user.dir}/shared/resource/derby/JTASAMPLE"/>
+    </dataSource>
 
     <application name="sample.javaee7.servlet.jta" context-root="/sample.javaee7.jta" location="${appLocation}" type="war"/>
 
