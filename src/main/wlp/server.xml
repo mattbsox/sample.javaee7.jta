@@ -12,12 +12,12 @@
 	<httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
 
 	<library id="DerbyLib">
-        <file name="${wlp.user.dir}/shared/resource/derby/derby.jar"/>
+        <file name="${shared.resource.dir}/derby/derby.jar"/>
     </library>
 
     <dataSource id="DefaultDataSource" jndiName="jtaDB">
         <jdbcDriver libraryRef="DerbyLib"/>
-        <properties.derby.embedded createDatabase="create" databaseName="${wlp.user.dir}/shared/resource/derby/JTASAMPLE"/>
+        <properties.derby.embedded createDatabase="create" databaseName="${shared.resource.dir}/derby/JTASAMPLE"/>
     </dataSource>
 
     <application name="sample.javaee7.servlet.jta" context-root="/sample.javaee7.jta" location="${appLocation}" type="war"/>

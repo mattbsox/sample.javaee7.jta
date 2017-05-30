@@ -51,6 +51,7 @@
             <groupId>javax.transaction</groupId>
             <artifactId>javax.transaction-api</artifactId>
             <version>1.2-b03</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.enterprise</groupId>
@@ -136,7 +137,7 @@
                                     <groupId>org.apache.derby</groupId>
                                     <artifactId>derby</artifactId>
                                     <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resource/derby</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources/derby</outputDirectory>
                                     <destFileName>derby.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
