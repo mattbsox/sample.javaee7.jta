@@ -7,11 +7,11 @@ This application demonstrates the use of @Transactional annotations to declarati
 #### Maven
 
 The sample can be built using [Apache Maven](http://maven.apache.org/). In the directory where you cloned the repository issue the following command to build the source.
-    ```bash
+    ```
     $ mvn install
     ```
 Then, in the jta-webapp directory issue the following command to run it on a Liberty server.
-    ```bash
+    ```
     $ mvn liberty:run-server
     ```
 #### WebSphere Development Tools (WDT)
@@ -28,36 +28,18 @@ To import the source code into Eclipse/WDT:
 2.	Browse... to the top level directory titled sample.javaee7.jta
 3.	Verfiy all three boxes are checked and select Finish
 
-### Manual Deployment
-1.	Add following features to your server.xml 
+- improved Maven integration for web projects starting with WDT 17.0.0.2 including support for loose applications.
 
-  ```
-  <feature>servlet-3.1</feature>
-  <feature>jsonp-1.0</feature>
-  <feature>jdbc-4.1</feature>
-  <feature>jndi-1.0</feature>
-  <feature>cdi-1.2</feature>
-  ```
+Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is explained on [wasdev.net](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/).
 
-2.	Add following derby resources to your server.xml:
-    
-```
-  <library id="DerbyLib">
-        <fileset dir="<DERBY_LIB_DIR>" id="DerbyFileset" includes="derbyclient.jar"/>
-  </library>
-```
-    
-```
-  <dataSource id="DefaultDataSource" jndiName="jdbc/derbyClient">
-        <jdbcDriver libraryRef="DerbyLib"/>
-        <properties.derby.client user="sample" password="sample" createDatabase="create" databaseName="<DB_DIR_LOCATION>" portNumber="<DB_PORT>" serverName="localhost"/>
-  </dataSource>
-```
+#### Import project and running in Eclipse/WDT:
 
-3.  Install this sample app to your server by copying sample.javaee7.jta.war that was made from running mvn install
-4.	Start the server.
-5.	Run the sample by hitting the following URL using your servers hostname and port
-[http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
+1.	Select menu File -> Import -> Maven -> Existing Maven Projects.
+2.	Select Browse... to the top level directory titled sample.javaee7.concurrency and select Finish
+3.	Click Yes to the WebSphere Liberty dialog to automatically create server in the Servers view for this project.
+4.  Right-click the project and select Run As > Run on Server.
+5.  Select the server and click Finish.
+6.  Confirm web browser opens with the sample url: [http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
 
 ### WAS Classic
 
@@ -89,3 +71,24 @@ To import the source code into Eclipse/WDT:
 7.	When the Confirm changes section is displayed, click Save.
 8.	Click Applications > Application Types > WebSphere enterprise applications.
 9.	Select the check box next to the sample application, and click Start.
+# Notice
+
+© Copyright IBM Corporation 2016, 2017.
+
+# License
+
+```text
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+````
+
+[Liberty Maven Plug-in]: https://github.com/WASdev/ci.maven
