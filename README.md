@@ -20,14 +20,6 @@ The WebSphere Development Tools (WDT) for Eclipse can be used to control the ser
 WDT also provides:
 - content-assist for server configuration (a nice to have: server configuration is minimal, but the tools can help you find what you need and identify finger-checks, etc.)
 - automatic incremental publish of applications so that you can write and test your changes locally without having to go through a build/publish cycle or restart the server (which is not that big a deal given the server restarts lickety-split, but less is more!).
-
-Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is explained on [wasdev.net](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/).
-
-To import the source code into Eclipse/WDT:
-1.	In the Enterprise Explorer view, right click and select Import -> Existing Maven Projects
-2.	Browse... to the top level directory titled sample.javaee7.jta
-3.	Verfiy all three boxes are checked and select Finish
-
 - improved Maven integration for web projects starting with WDT 17.0.0.2 including support for loose applications.
 
 Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is explained on [wasdev.net](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/).
