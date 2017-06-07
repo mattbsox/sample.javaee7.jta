@@ -26,11 +26,11 @@ Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is ex
 
 #### Import project and running in Eclipse/WDT:
 
-1.	Select menu File -> Import -> Maven -> Existing Maven Projects.
-2.	Select Browse... to the top level directory titled sample.javaee7.concurrency and select Finish
-3.	Click Yes to the WebSphere Liberty dialog to automatically create server in the Servers view for this project.
-4.  Right-click the project and select Run As > Run on Server.
-5.  Select the server and click Finish.
+1.	Select menu *File -> Import -> Maven -> Existing Maven Projects*.
+2.	Select *Browse...* to the top level directory titled sample.javaee7.concurrency and select *Finish*.
+3.	Click *Yes* to the WebSphere Liberty dialog to automatically create server in the Servers view for this project.
+4.  Right-click the project and select *Run As > Run on Server*.
+5.  Select the server and click *Finish*.
 6.  Confirm web browser opens with the sample url: [http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
 
 ### WAS Classic
