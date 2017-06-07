@@ -20,6 +20,7 @@
         <properties.derby.embedded createDatabase="create" databaseName="${shared.resource.dir}/derby/JTASAMPLE"/>
     </dataSource>
 
-    <application name="sample.javaee7.servlet.jta" context-root="/sample.javaee7.jta" location="${appLocation}" type="war"/>
+    <application name="sample.javaee7.jta" context-root="/sample.javaee7.jta" location="${appLocation}" type="war"/>
 
 </server>
+
