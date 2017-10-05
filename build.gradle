@@ -1,0 +1,77 @@
+apply plugin: 'war'
+apply plugin: 'liberty'
+
+group = 'net.wasdev.wlp.sample.javaee7'
+version = '1.0-SNAPSHOT'
+
+description = """Java EE 7 Sample JTA"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+configurations {
+	derby {
+		transitive = false 
+	}
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            name = 'Sonatype Nexus Snapshots'
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:1.1-SNAPSHOT'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'javax.json', name: 'javax.json-api', version:'1.0'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.1.0'
+    providedCompile group: 'javax.transaction', name: 'javax.transaction-api', version:'1.2-b03'
+    providedCompile group: 'javax.enterprise', name: 'cdi-api', version:'1.2'
+
+    derby group: 'org.apache.derby', name: 'derby', version: '10.13.1.1'
+}
+
+liberty {
+	server {
+		configFile = file('src/main/wlp/server.xml')
+		bootstrapProperties = ['appLocation':war.archiveName]
+
+		apps = [war]
+	}
+}
+
+task copyDerby { 
+    doLast {
+        copy { 
+            from configurations.derby
+            into "$buildDir/wlp/usr/shared/resources/derby/"
+            include '*.jar'
+            rename "derby-10.13.1.1.jar", 'derby.jar'
+        }
+    }
+}
+
+task printServerMessage {
+	doLast {
+		println 'The server is running at localhost:9080/sample.javaee7.jta'
+	}
+}
+
+check.dependsOn 'libertyStart'
+copyDerby.dependsOn 'installApps'
+libertyStart.dependsOn 'copyDerby'
+libertyStart.finalizedBy 'printServerMessage'

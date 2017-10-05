@@ -1,10 +1,10 @@
-### JTA sample for Java EE7
+## JTA sample for Java EE7
 
 This application demonstrates the use of @Transactional annotations to declaratively control transaction boundaries, along with using the @TransactionScoped annotation to scope a bean lifecycle to a transaction.
 
-### WAS Liberty
+## WAS Liberty
 
-#### Maven
+### Maven
 
 The sample can be built using [Apache Maven](http://maven.apache.org/). In the directory where you cloned the repository issue the following command to build the source.
     ```
@@ -27,13 +27,28 @@ Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is ex
 #### Import project and running in Eclipse/WDT:
 
 1.	Select menu *File -> Import -> Maven -> Existing Maven Projects*.
-2.	Select *Browse...* to the top level directory titled sample.javaee7.concurrency and select *Finish*.
+2.	Select *Browse...* to the top level directory titled sample.javaee7.jta and select *Finish*.
 3.	Click *Yes* to the WebSphere Liberty dialog to automatically create server in the Servers view for this project.
 4.  Right-click the project and select *Run As > Run on Server*.
 5.  Select the server and click *Finish*.
 6.  Confirm web browser opens with the sample url: [http://hostname:port/sample.javaee7.jta/](http://hostname:port/sample.javaee7.jta/)
 
-### WAS Classic
+### Gradle
+
+The sample can be built using [Gradle](https://gradle.org/). In the directory where you cloned the repository issue the following command to build and run the project.
+    ```
+    $ gradle build
+    ```
+To start the application use the command
+    ```
+    $ gradle libertyStart
+    ```
+To stop the application use the command
+    ```
+    $ gradle libertyStop
+    ```
+
+## WAS Classic
 
 #### Configure required resources
 
@@ -42,15 +57,15 @@ Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is ex
   - If that provider does not exist, create one with a Connection pool datasource implementation type, and point to the Derby.jar file; for example: ${WAS_INSTALL_ROOT}/derby/lib
 
 2. Verify that a Default datasource instance is configured. Click Resources > JDBC > Data sources.
-	
+
   - If that datasource does not exist, create one with the name "Default datasource" and the JNDI name "DefaultDatasource" that points to the Derby JDBC Provider and "${WAS_INSTALL_ROOT}/derby/DefaultDB" database.
   - To create the actual database, remotely connect to your machine hosting WebSphere Classic using SSH.
 
     - Navigate to ${WAS_INSTALL_ROOT}/derby/bin/embedded/
-    
+
     - Run "./ij.sh". When you see the prompt "ij>", enter the following command:
         $ connect 'jdbc:derby:DefaultDB;create=true';
-        
+
     - The default Derby database is created in the following directory: ${WAS_INSTALL_ROOT}/derby/DefaultDB
 
 ### Install using the Administrative Console
