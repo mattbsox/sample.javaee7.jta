@@ -7,13 +7,13 @@ This application demonstrates the use of @Transactional annotations to declarati
 ### Maven
 
 The sample can be built using [Apache Maven](http://maven.apache.org/). In the directory where you cloned the repository issue the following command to build the source.
-    ```
+    
     $ mvn install
-    ```
+
 Then, in the jta-webapp directory issue the following command to run it on a Liberty server.
-    ```
+
     $ mvn liberty:run-server
-    ```
+
 #### WebSphere Development Tools (WDT)
 
 The WebSphere Development Tools (WDT) for Eclipse can be used to control the server (start/stop/dump/etc.), it also supports incremental publishing with minimal restarts, working with a debugger to step through your applications, etc.
@@ -36,17 +36,16 @@ Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is ex
 ### Gradle
 
 The sample can be built using [Gradle](https://gradle.org/). In the directory where you cloned the repository issue the following command to build and run the project.
-    ```
+
     $ gradle build
-    ```
-To start the application use the command
-    ```
+
+To start the application use the command:
+
     $ gradle libertyStart
-    ```
-To stop the application use the command
-    ```
+
+To stop the application use the command:
+
     $ gradle libertyStop
-    ```
 
 ## WAS Classic
 
