@@ -5,3 +5,4 @@ matrix:
 script:
   - mvn install
   - ./gradlew build libertyStop
+
