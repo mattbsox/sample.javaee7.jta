@@ -1,4 +1,4 @@
-## JTA sample for Java EE7
+## JTA sample for Java EE7 [![Build Status](https://travis-ci.org/WASdev/sample.javaee7.jta.svg?branch=master)](https://travis-ci.org/WASdev/sample.javaee7.jta)
 
 This application demonstrates the use of @Transactional annotations to declaratively control transaction boundaries, along with using the @TransactionScoped annotation to scope a bean lifecycle to a transaction.
 

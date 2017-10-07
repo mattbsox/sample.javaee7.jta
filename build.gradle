@@ -4,7 +4,7 @@ apply plugin: 'liberty'
 group = 'net.wasdev.wlp.sample.javaee7'
 version = '1.0-SNAPSHOT'
 
-description = """Java EE 7 Sample JTA"""
+description = "Java EE 7 Sample JTA"
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
