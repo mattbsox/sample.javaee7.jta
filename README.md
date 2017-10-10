@@ -35,7 +35,7 @@ Installing WDT on Eclipse is as simple as a drag-and-drop, but the process is ex
 
 ### Gradle
 
-The sample can be built using [Gradle](https://gradle.org/). In the directory where you cloned the repository issue the following command to build and run the project.
+The sample can be built using [Gradle](https://gradle.org/) and the [Liberty Gradle Plugin][]. In the directory where you cloned the repository issue the following command to build and run the project.
 
     $ gradle build
 
@@ -98,3 +98,4 @@ limitations under the License.
 ````
 
 [Liberty Maven Plug-in]: https://github.com/WASdev/ci.maven
+[Liberty Gradle Plug-in]: https://github.com/WASdev/ci.gradle
