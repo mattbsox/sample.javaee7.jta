@@ -6,15 +6,15 @@ version = '1.0-SNAPSHOT'
 
 description = "Java EE 7 Sample JTA"
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
 
 configurations {
 	derby {
-		transitive = false 
+		transitive = false
 	}
 }
 
@@ -54,9 +54,9 @@ liberty {
 	}
 }
 
-task copyDerby { 
+task copyDerby {
     doLast {
-        copy { 
+        copy {
             from configurations.derby
             into "$buildDir/wlp/usr/shared/resources/derby/"
             include '*.jar'
