@@ -24,11 +24,11 @@ buildscript {
         mavenCentral()
         maven {
             name = 'Sonatype Nexus Snapshots'
-            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = 'https://oss.sonatype.org/content/repositories/netwasdev-1088'
         }
     }
     dependencies {
-        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.0-SNAPSHOT'
+        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.0'
     }
 }
 
@@ -67,7 +67,7 @@ task copyDerby {
 
 task printServerMessage {
 	doLast {
-		println 'The server is running at localhost:9080/sample.javaee7.jta'
+		println 'The server is running at http://localhost:9080/sample.javaee7.jta'
 	}
 }
 
