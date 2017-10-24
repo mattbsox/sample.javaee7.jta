@@ -1,8 +1,11 @@
 language: java
-matrix:
-  include:
-    - jdk: openjdk8
-script:
-  - mvn install
-  - ./gradlew build libertyStop
 
+jdk:
+    - openjdk8
+
+env:
+    - TEST_COMMAND="./gradlew clean build libertyStop"
+    - TEST_COMMAND="mvn clean install"
+
+script:
+    - (eval "$TEST_COMMAND")
