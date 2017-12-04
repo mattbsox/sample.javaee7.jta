@@ -68,6 +68,5 @@ task printServerMessage {
 }
 
 check.dependsOn 'libertyStart'
-copyDerby.dependsOn 'installApps'
-libertyStart.dependsOn 'copyDerby'
+libertyCreate.finalizedBy 'copyDerby'
 libertyStart.finalizedBy 'printServerMessage'
